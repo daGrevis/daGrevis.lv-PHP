@@ -1,0 +1,59 @@
+input, textarea, button {
+	border: 1px solid black;
+	font-family: Helvetica, Arial;
+	margin: 5px 0;
+}
+
+input:not([type="checkbox"]) {
+	width: 270px;
+	height: 20px;
+}
+
+textarea {
+	font-family: Helvetica, Arial;
+	width: 540px;
+	height: 120px;
+}
+
+button {
+	padding: 0 34px;
+	height: 20px;
+}
+
+.error_message {
+	color: red;
+	font-weight: bold;
+	margin: 0 0 10px 0;
+}
+
+.success_message {
+	color: green;
+	font-weight: bold;
+	margin: 0 0 10px 0;
+}
+
+.date_or_time {
+	font-size: 14px;
+}
+
+.tip {
+	font-size: 14px;
+}
+
+#footer {
+	font-size: 14px;
+	margin: 40px 0 0 0;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+th {
+	text-align: left;
+}
+
+th, td {
+	border: 1px solid black;
+	padding: 5px;
+}
