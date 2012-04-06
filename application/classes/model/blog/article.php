@@ -80,6 +80,7 @@ class Model_Blog_Article extends ORM {
 
 		return
 			$this
+				->select_other(array('id', 'title', 'content'))
 				->published()
 				->order_by('id', 'desc')
 					->find_all()
