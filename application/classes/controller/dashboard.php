@@ -9,7 +9,7 @@ class Controller_Dashboard extends Controller_Template {
 
 		parent::before();
 
-		if (!A1::signed_in() && $this->request->action() !== 'sign_in') {
+		if (!A1::signed_in() && !in_array($this->request->action(), array('sign_in', 'sign_out'))) {
 
 			$this->request->redirect('dashboard/sign_in');
 
@@ -18,6 +18,12 @@ class Controller_Dashboard extends Controller_Template {
 	}
 
 	function action_sign_in() {
+
+		if (A1::signed_in()) {
+
+			throw new HTTP_Exception_401("You are already signed-in!");
+
+		}
 
 		$attempt = ORM::factory('Attempt');
 
@@ -56,6 +62,12 @@ class Controller_Dashboard extends Controller_Template {
 	}
 
 	function action_sign_out() {
+
+		if (!A1::signed_in()) {
+
+			throw new HTTP_Exception_401("You must be signed-in!");
+
+		}
 
 		Session::instance()
 			->delete('signed_in')
