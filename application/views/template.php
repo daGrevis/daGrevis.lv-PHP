@@ -31,6 +31,16 @@
 
 		<?= $body ?>
 
+		<? if (A1::signed_in()): ?>
+
+			<div id="to_dashboard">
+
+				<a href="<?= URL::dashboard() ?>">To Dashboard</a>
+
+			</div>
+
+		<? endif ?>
+
 		<div id="footer">
 			Visas tiesības ir aizsargātas un satura pārpublicēšana ir aizliegta.
 		</div>
