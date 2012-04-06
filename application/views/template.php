@@ -45,6 +45,12 @@
 			Visas tiesības ir aizsargātas un satura pārpublicēšana ir aizliegta.
 		</div>
 		
+		<? if (Kohana::$environment === ENVIRONMENT_DEVELOPMENT): ?>
+
+			<? ProfilerToolbar::render(true) ?>
+
+		<? endif ?>
+
 		<script src="<?= URL::script('google_analytics.js') ?>"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 

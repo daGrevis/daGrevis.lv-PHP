@@ -56,15 +56,19 @@ ini_set('unserialize_callback_func', 'spl_autoload_call');
 I18n::lang('en-us');
 
 /**
- * Set Kohana::$environment if a 'KOHANA_ENV' environment variable has been supplied.
- *
- * Note: If you supply an invalid environment name, a PHP warning will be thrown
- * saying "Couldn't find constant Kohana::<INVALID_ENV_NAME>"
+ * Sets environment.
+ * 
+ * @author daGrevis
  */
-if (isset($_SERVER['KOHANA_ENV']))
-{
-	Kohana::$environment = constant('Kohana::'.strtoupper($_SERVER['KOHANA_ENV']));
-}
+
+define('ENVIRONMENT_DEVELOPMENT', 1);
+define('ENVIRONMENT_PRODUCTION', 2);
+
+Kohana::$environment =
+	$_SERVER['SERVER_ADDR'] === '127.0.0.1'
+		? ENVIRONMENT_DEVELOPMENT
+		: ENVIRONMENT_PRODUCTION
+		;
 
 /**
  * Initialize Kohana, setting the default options.
@@ -98,6 +102,7 @@ Kohana::$config->attach(new Config_File);
  * Enable modules. Modules are referenced by a relative or absolute path.
  */
 Kohana::modules(array(
+	'profilertoolbar' => MODPATH.'profilertoolbar', // https://github.com/Alert/profilertoolbar
 	// 'auth'       => MODPATH.'auth',       // Basic authentication
 	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
 	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
