@@ -13,4 +13,15 @@ class Kohana extends Kohana_Core {
 
 	}
 
+	/**
+	 * Checks that environment is production.
+	 * 
+	 * @return boolean
+	 */
+	static function is_production() {
+
+		return self::$environment === self::PRODUCTION;
+
+	}
+
 }
