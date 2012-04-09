@@ -114,31 +114,6 @@ Kohana::modules(array(
 	));
 
 /**
- * Set the routes. Each route must have a minimum of a name, a URI and a set of
- * defaults for the URI.
+ * Loads routes.
  */
-
-Route::set('article', 'article/<id>(/<slug>)', array('id' => '\d+'))
-	->defaults(array(
-		'controller' => 'article',
-		'action'     => 'view',
-	));
-
-Route::set('dashboard', 'dashboard')
-	->defaults(array(
-		'controller' => 'dashboard',
-		'action'     => 'index',
-	));
-
-Route::set('dashboard/blog', 'dashboard/blog(/<action>(/<id>(/<id2>(/<id3>(/<id4>)))))')
-	->defaults(array(
-		'directory'  => 'dashboard',
-		'controller' => 'blog',
-		'action'     => 'list',
-	));
-
-Route::set('default', '(<controller>(/<action>(/<id>(/<id2>(/<id3>(/<id4>))))))')
-	->defaults(array(
-		'controller' => 'landing',
-		'action'     => 'index',
-	));
+require Kohana::find_file(null, 'routes');
