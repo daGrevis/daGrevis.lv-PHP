@@ -45,7 +45,7 @@
 			Visas tiesības ir aizsargātas un satura pārpublicēšana ir aizliegta.
 		</div>
 		
-		<? if (Kohana::$environment === ENVIRONMENT_DEVELOPMENT): ?>
+		<? if (Kohana::is_development()): ?>
 
 			<? ProfilerToolbar::render(true) ?>
 

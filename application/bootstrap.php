@@ -60,14 +60,10 @@ I18n::lang('en-us');
  * 
  * @author daGrevis
  */
-
-define('ENVIRONMENT_DEVELOPMENT', 1);
-define('ENVIRONMENT_PRODUCTION', 2);
-
 Kohana::$environment =
 	$_SERVER['SERVER_ADDR'] === '127.0.0.1' || $_SERVER['SERVER_ADDR'] === '::1'
-		? ENVIRONMENT_DEVELOPMENT
-		: ENVIRONMENT_PRODUCTION
+		? Kohana::DEVELOPMENT
+		: Kohana::PRODUCTION
 		;
 
 /**
