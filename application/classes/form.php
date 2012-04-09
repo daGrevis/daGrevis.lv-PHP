@@ -1,8 +1,5 @@
 <?php
 
-/**
- * @author daGrevis
- */
 class Form extends Kohana_Form {
 	
 	/**

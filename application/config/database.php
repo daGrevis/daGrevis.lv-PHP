@@ -1,11 +1,5 @@
 <?php
 
-if (!defined('SYSPATH')) {
-
-	exit('Hacking attempt. Ohh, my!!');
-
-}
-
 return array(
 	'default' => array (
 		'type' => 'mysql',

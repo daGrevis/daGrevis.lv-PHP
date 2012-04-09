@@ -1,8 +1,5 @@
 <?php
 
-/**
- * @author daGrevis
- */
 class Controller_Dashboard extends Controller_Template {
 
 	function before() {

@@ -1,8 +1,5 @@
 <?php
 
-/**
- * @daGrevis
- */
 class A1 {
 
 	static function signed_in() {

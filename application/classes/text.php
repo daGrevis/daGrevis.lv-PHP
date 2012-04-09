@@ -1,8 +1,5 @@
 <?php
 
-/**
- * @author daGrevis
- */
 class Text extends Kohana_Text {
 
 	/**

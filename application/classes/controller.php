@@ -1,8 +1,5 @@
 <?php
 
-/**
- * @daGrevis
- */
 class Controller extends Kohana_Controller {
 
 	protected $conventions;

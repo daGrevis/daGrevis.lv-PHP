@@ -2,8 +2,6 @@
 
 /**
  * Wrapper for Markdown (https://github.com/michelf/php-markdown).
- * 
- * @author daGrevis
  */
 class Darkmown extends Markdown_Parser {
 

@@ -1,8 +1,5 @@
 <?php
 
-/**
- * @author daGrevis
- */
 class Controller_Template extends Controller {
 
 	protected

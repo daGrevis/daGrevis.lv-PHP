@@ -4,8 +4,6 @@ class Arr extends Kohana_Arr {
 
 	/**
 	 * Gets non-associative elements from given array.
-	 * 
-	 * @daGrevis
 	 */
 	static function get_non_assoc_elements(array $array) {
 

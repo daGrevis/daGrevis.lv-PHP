@@ -2,8 +2,6 @@
 
 /**
  * Useful utilities.
- * 
- * @author daGrevis
  */
 class Utility {
 	

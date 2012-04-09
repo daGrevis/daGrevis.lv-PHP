@@ -1,8 +1,5 @@
 <?php
 
-/**
- * @author daGrevis
- */
 class Controller_Dashboard_Blog extends Controller_Template {
 
 	function action_list() {
