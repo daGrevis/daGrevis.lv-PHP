@@ -100,19 +100,9 @@ if (Kohana::is_production()) {
 Kohana::$config->attach(new Config_File);
 
 /**
- * Enable modules. Modules are referenced by a relative or absolute path.
+ * Loads modules.
  */
-Kohana::modules(array(
-	'profilertoolbar' => MODPATH.'profilertoolbar', // https://github.com/Alert/profilertoolbar
-	// 'auth'       => MODPATH.'auth',       // Basic authentication
-	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
-	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
-	'database'   => MODPATH.'database',   // Database access
-	// 'image'      => MODPATH.'image',      // Image manipulation
-	'orm'        => MODPATH.'orm',        // Object Relationship Mapping
-	'unittest'   => MODPATH.'unittest',   // Unit testing
-	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
-	));
+require Kohana::find_file(null, 'modules');
 
 /**
  * Loads routes.
