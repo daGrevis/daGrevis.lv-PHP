@@ -19,6 +19,19 @@ Route::set('dashboard/blog', 'dashboard/blog(/<action>(/<id>(/<id2>(/<id3>(/<id4
 		'action'     => 'list',
 	));
 
+Route::set('dashboard/cms', 'dashboard/cms(/<action>(/<id>(/<id2>(/<id3>(/<id4>)))))')
+	->defaults(array(
+		'directory'  => 'dashboard',
+		'controller' => 'cms',
+		'action'     => 'list',
+	));
+
+Route::set('page', 'page/<id>', array('id' => '\d+'))
+	->defaults(array(
+		'controller' => 'page',
+		'action'     => 'view',
+	));
+
 Route::set('default', '(<controller>(/<action>(/<id>(/<id2>(/<id3>(/<id4>))))))')
 	->defaults(array(
 		'controller' => 'landing',

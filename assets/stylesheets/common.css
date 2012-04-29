@@ -11,8 +11,6 @@ input:not([type="checkbox"]) {
 
 textarea {
 	font-family: Helvetica, Arial;
-	width: 540px;
-	height: 120px;
 }
 
 button {

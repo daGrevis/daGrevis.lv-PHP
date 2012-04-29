@@ -22,4 +22,19 @@ class Form extends Kohana_Form {
 		
 	}
 
+	/**
+	 * Helper for creating token as hidden input. With using default params it's just simple CSRF token.
+	 */
+	static function token($name = 'csrf_token', $token = null) {
+
+		$token =
+			$token !== null
+				? $token
+				: Security::token()
+				;
+
+		return Form::hidden($name, $token);
+
+	}
+
 }
