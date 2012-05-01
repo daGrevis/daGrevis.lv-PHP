@@ -29,9 +29,22 @@ class Model_Finman_Item extends AutoModeler {
 
 	}
 
-	static function get_items() {
+	static function get_count() {
 
-		return
+		return (integer)
+			DB::select(array(DB::expr('COUNT(*)'), 'count'))
+				->from(self::$table_name)
+				->join('finman_categories')
+				->on('finman_categories.id', '=', self::$table_name.'.category_id')
+				->execute()
+				->get('count')
+				;
+
+	}
+
+	static function get_items($limit = null, $offset = null) {
+
+		$query =
 			DB::select(
 				self::$table_name.'.id',
 				self::$table_name.'.title',
@@ -43,8 +56,15 @@ class Model_Finman_Item extends AutoModeler {
 				->join('finman_categories')
 				->on('finman_categories.id', '=', self::$table_name.'.category_id')
 				->order_by('id', 'desc')
-				->execute()
-				->as_array();
+				;
+
+		$limit === null ?: $query->limit($limit);
+		$offset === null ?: $query->offset($offset);
+
+		$result = $query->execute();
+
+		return
+			$result->as_array();
 
 	}
 

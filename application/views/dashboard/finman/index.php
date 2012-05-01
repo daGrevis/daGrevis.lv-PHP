@@ -30,6 +30,8 @@
 
 	</table>
 
+	<?= $pagination ?>
+
 <?php else: ?>
 
 	No items

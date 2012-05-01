@@ -2,13 +2,31 @@
 
 class Controller_Dashboard_Finman extends Controller_Template {
 
+	const ITEMS_PER_PAGE = 10;
+
 	function action_index() {
 
-		$items = Model_Finman_Item::get_items();
-		$items = AutoModeler::set_data_for_many('Finman_Item', $items);
+		$count = Model_Finman_Item::get_count();
+
+		$pagination = Pagination::factory(array(
+			'total_items' => $count,
+			'items_per_page' => self::ITEMS_PER_PAGE,
+		));
+
+		if ($count) {
+
+			$items = Model_Finman_Item::get_items(self::ITEMS_PER_PAGE, $pagination->offset);
+			$items = AutoModeler::set_data_for_many('Finman_Item', $items);
+
+		} else {
+
+			$items = array();
+
+		}
 
 		$this->view
 			->set('items', $items)
+			->set('pagination', $pagination)
 			;
 
 	}

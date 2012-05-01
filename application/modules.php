@@ -6,4 +6,5 @@ Kohana::modules(array(
 	'am' => MODPATH.'am', // https://github.com/zombor/Auto-Modeler
 	'orm' => MODPATH.'orm', // https://github.com/kohana/orm
 	'unittest' => MODPATH.'unittest', // https://github.com/kohana/unittest
+	'pagination' => MODPATH.'pagination', // https://github.com/kloopko/kohana-pagination
 ));
