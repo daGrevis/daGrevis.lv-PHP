@@ -61,7 +61,17 @@ class Controller_Dashboard_Finman extends Controller_Template {
 			$item->description = $this->request->post('description');
 			$item->price = $this->request->post('price');
 
-			$item->save();
+			$count = $this->request->post('count');
+
+			if ($count > 1) {
+
+				$item->save_multiple($count);
+
+			} else {
+
+				$item->save();
+
+			}
 
 			$this->request->redirect('dashboard/finman');
 

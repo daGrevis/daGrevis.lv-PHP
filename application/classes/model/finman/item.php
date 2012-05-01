@@ -29,6 +29,26 @@ class Model_Finman_Item extends AutoModeler {
 
 	}
 
+	function save_multiple($count) {
+
+		$query =
+			DB::insert($this->_table_name)
+				->columns(array_keys($this->_data))
+				;
+
+		$data = $this->_data;
+		$data['price'] *= 100;
+
+		for ($i = 0; $i < $count; ++$i) {
+
+			$query->values($data);
+
+		}
+
+		$query->execute();
+
+	}
+
 	static function get_count() {
 
 		return (integer)

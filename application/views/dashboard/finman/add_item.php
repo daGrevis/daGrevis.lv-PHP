@@ -51,6 +51,17 @@
 
 	<div>
 
+		<label>
+
+			Count
+			<input type="text" name="count" value="1" /> x
+
+		</label>
+
+	</div>
+
+	<div>
+
 		<button>Add item</button>
 
 	</div>

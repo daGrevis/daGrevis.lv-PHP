@@ -1,4 +1,4 @@
-input[name="price"] {
+input[name="price"], input[name="count"] {
 	width: 40px;
 }
 
