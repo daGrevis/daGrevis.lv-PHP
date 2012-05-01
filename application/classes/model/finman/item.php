@@ -15,6 +15,20 @@ class Model_Finman_Item extends AutoModeler {
 		'last_updated' => '',
 	);
 
+	function save($validation = null) {
+
+		$this->price *= 100;
+
+		if (!$this->loaded()) {
+
+			$this->created = time();
+
+		}
+
+		parent::save($validation);
+
+	}
+
 	static function get_items() {
 
 		return

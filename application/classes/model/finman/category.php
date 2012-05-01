@@ -25,4 +25,14 @@ class Model_Finman_Category extends AutoModeler {
 
 	}
 
+	static function get_categories() {
+
+		return
+			DB::select('id', 'title')
+				->from(self::$table_name)
+				->execute()
+				->as_array();
+
+	}
+
 }

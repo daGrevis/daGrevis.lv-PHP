@@ -30,4 +30,29 @@ class Controller_Dashboard_Finman extends Controller_Template {
 
 	}
 
+	function action_add_item() {
+
+		$categories = Model_Finman_Category::get_categories();
+
+		if ($this->request->method() === Request::POST) {
+
+			$item = AutoModeler::factory('Finman_Item');
+
+			$item->category_id = $this->request->post('category_id');
+			$item->title = $this->request->post('title');
+			$item->description = $this->request->post('description');
+			$item->price = $this->request->post('price');
+
+			$item->save();
+
+			$this->request->redirect('dashboard/finman');
+
+		}
+
+		$this->view
+			->set('categories', $categories)
+			;
+
+	}
+
 }
