@@ -1,5 +1,5 @@
 <?php
 
 return array(
-	'global_password' => 'Sex Pistols',
+	'global_password' => 'mjaumjau',
 );

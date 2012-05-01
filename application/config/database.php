@@ -4,10 +4,10 @@ return array(
 	'default' => array (
 		'type' => 'mysql',
 		'connection' => array(
-			'hostname' => '127.0.0.1:3306',
+			'hostname' => 'localhost:3306',
 			'database' => 'dagrevis_lv',
-			'username' => 'root',
-			'password' => '',
+			'username' => 'dagrevis',
+			'password' => 'mjaumjau',
 			'persistent' => false,
 		),
 		'table_prefix' => '',
