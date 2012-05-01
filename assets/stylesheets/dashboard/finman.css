@@ -1,3 +1,7 @@
 input[name="price"] {
 	width: 40px;
 }
+
+td.title {
+	min-width: 200px;
+}
