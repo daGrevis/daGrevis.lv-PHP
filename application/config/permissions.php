@@ -22,5 +22,8 @@ return array(
 		'blog' => array(
 			'A1::signed_in',
 		),
+		'finman' => array(
+			'A1::signed_in',
+		),
 	),
 );
