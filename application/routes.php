@@ -26,6 +26,13 @@ Route::set('dashboard/cms', 'dashboard/cms(/<action>(/<id>(/<id2>(/<id3>(/<id4>)
 		'action'     => 'list',
 	));
 
+Route::set('dashboard/finman', 'dashboard/finman(/<action>(/<id>(/<id2>(/<id3>(/<id4>)))))')
+	->defaults(array(
+		'directory'  => 'dashboard',
+		'controller' => 'finman',
+		'action'     => 'index',
+	));
+
 Route::set('page', 'page/<id>', array('id' => '\d+'))
 	->defaults(array(
 		'controller' => 'page',
