@@ -13,4 +13,16 @@ class Model_Finman_Category extends AutoModeler {
 		'last_updated' => '',
 	);
 
+	function save($validation = null) {
+
+		if (!$this->loaded()) {
+
+			$this->created = time();
+
+		}
+
+		parent::save($validation);
+
+	}
+
 }
