@@ -1,6 +1,6 @@
 <h2>
 	<a href="<?= URL::dashboard() ?>">Dashboard</a>
-	— <a href="<?= URL::dashboard('blog') ?>">Blog</a>
+	— <a href="<?= URL::current() ?>">List</a>
 </h2>
 
 <? if (count($articles)): ?>

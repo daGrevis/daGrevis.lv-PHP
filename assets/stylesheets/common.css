@@ -1,46 +1,204 @@
-input, textarea, button {
-	border: 1px solid black;
-	font-family: Helvetica, Arial;
-	margin: 5px 0;
-}
+/**
+ * Gloden ratio:
+ * 960px
+ * 38% | 62%
+ * 
+ * Base color: rgb(32, 32, 32)
+ */
 
-input:not([type="checkbox"]) {
-	width: 270px;
-	height: 20px;
-}
+/**
+ * Other:
+ */
 
-textarea {
-	font-family: Helvetica, Arial;
-}
+	* {
+		margin: 0;
+		padding: 0;
+	}
 
+/**
+ * Body:
+ */
+
+	body {
+		font-family: 'Open Sans', sans-serif;
+		color: rgb(32, 32, 32);
+	}
+
+/**
+ * Wrapper:
+ */
+
+	#wrapper {
+		width: 100%;
+		min-width: 60em;
+		border-top: .25em solid rgb(32, 32, 32);
+		padding-top: 2em;
+	}
+
+/**
+ * Header:
+ */
+
+	header {
+		margin-top: 30px; /* Because `header h1` doesn't take effect from other headings. */
+		margin-left: 3%;
+		margin-right: 2%;
+		width: 33%; /* 38 (golden ratio) - 5 (margin) */
+		float: left;
+		text-align: center;
+	}
+
+	header h1 {
+		display: inline;
+	}
+
+	#logo { /* Isn't the actual code! */
+		background: url('../images/star.png');
+		width: 48px;
+		height: 48px;
+		margin-right: .75em;
+		display: inline-block; /* Except this. */
+	}
+
+/**
+ * Content:
+ */
+
+	#content {
+		margin-left: 2%;
+		margin-right: 3%;
+		width: 57%; /* 62 (golden ratio) - 5 (margin) */
+		float: right;
+	}
+
+	pre {
+		background: rgb(245, 245, 245);
+		width: 80%;
+		padding: .625em;
+		margin: 1.5em 0;
+	}
+
+	.meta {
+		padding-bottom: 1em;
+	}
+
+/**
+ * Footer:
+ */
+
+	footer {
+		padding-top: 6em;
+		clear: both;
+		text-align: center;
+	}
+
+	footer nav ul li {
+		display: inline;
+	}
+
+	nav, #search {
+		display: inline-block;
+	}
+
+	nav {
+		margin-right: 3em;
+	}
+
+	nav ul {
+		padding-left: 0; /* Reset for normalize.css. */
+	}
+
+/**
+ * Typography:
+ */
+
+	header h1 {
+		font-size: 3em;
+	}
+	header h2 {
+		font-size: 1.2em;
+	}
+	header span {
+		font-size: .875em;
+		padding-left: .5em;
+	}
+	#content h2 {
+		font-size: 1.3em;
+	}
+	#content h3 {
+		font-size: 1em;
+		font-weight: 600;
+	}
+	#content h1,
+	#content h2,
+	#content h3 {
+		margin-top: 2em;
+		margin-bottom: .625em;
+	}
+
+	p, blockquote, ul, ol {
+		font-size: .9em;
+	}
+
+	pre code {
+		font-family: 'Meslo LG M DZ', 'Monaco', 'Lucida Console', monospace;
+		font-size: .7em;
+	}
+
+	.meta {
+		font-size: .8em;
+	}
+
+	a {
+		text-decoration: none;
+		padding: .125em .25em;
+		color: rgb(32, 32, 32);
+		background: rgb(245, 245, 245);
+	}
+
+	.pipe {
+		padding: 0 .5em;
+	}
+
+	h1 a, h2 a, h3 a { /* Reset. */
+		background: white;
+		padding: 0;
+	}
+
+	blockquote {
+		margin: 2em 1em;
+	}
+
+/**
+ * Hovers:
+ */
+
+	a:hover, pre:hover {
+		background: rgb(235, 235, 235);
+	}
+	h1 a:hover, h2 a:hover, h3 a:hover { /* Reset. */
+		background: white;
+		padding: 0;
+	}
+
+
+input, button {
+	font-family: 'Open Sans', sans-serif; /* No idea why this is needed. Feels like a dirty-fix... */
+	font-size: .8em;
+	color: rgb(32, 32, 32);
+	border: 1px solid rgb(128, 128, 128);
+	padding: 2px 4px;
+}
 button {
-	padding: 0 34px;
-	height: 20px;
+	background: rgb(215, 215, 215);
 }
 
-.error_message {
-	color: red;
-	font-weight: bold;
-	margin: 0 0 10px 0;
+#search input {
+	width: 200px;
 }
 
-.success_message {
-	color: green;
-	font-weight: bold;
-	margin: 0 0 10px 0;
-}
-
-.date_or_time {
-	font-size: 14px;
-}
-
-.tip {
-	font-size: 14px;
-}
-
-#footer {
-	font-size: 14px;
-	margin: 40px 0 0 0;
+table {
+	font-size: 0.875em;
 }
 
 table {
@@ -56,6 +214,25 @@ th, td {
 	padding: 5px;
 }
 
-#to_dashboard {
-	margin: 40px 0 0 0;
+.error_message {
+	color: red;
+	margin: 0 0 10px 0;
+}
+
+.success_message {
+	color: green;
+	margin: 0 0 10px 0;
+}
+
+.tip {
+	font-size: 0.8em;
+}
+
+input:not([type="checkbox"]) {
+	width: 20em;
+}
+
+textarea {
+	width: 40em;
+	height: 20em;
 }

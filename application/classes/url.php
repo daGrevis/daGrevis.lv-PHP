@@ -20,6 +20,12 @@ class URL extends Kohana_URL {
 
 	}
 
+	static function image($path) {
+
+		return self::asset('images/'.$path);
+
+	}
+
 	static function dashboard($path = null) {
 
 		if ($path !== null) {

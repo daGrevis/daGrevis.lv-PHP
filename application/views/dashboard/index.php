@@ -19,4 +19,5 @@
 	<li><a href="<?php echo URL::dashboard('finman/add_category') ?>">Add category</a></li>
 </ul>
 
-<a href="<?= URL::dashboard('sign_out') ?>">Sign out</a>
+<br />
+<p><a href="<?= URL::dashboard('sign_out') ?>">Sign out</a></p>

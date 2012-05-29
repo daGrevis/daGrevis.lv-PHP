@@ -1,9 +1,11 @@
-function log() {
+(function() {
 
-	for (var i in arguments) {
+	'use strict';
 
-		console.log(arguments[i]);
+	$(function() {
 
-	}
+		//
+		
+	});
 
-}
+}());

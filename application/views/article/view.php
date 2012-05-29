@@ -1,23 +1,32 @@
-<h2>
-	<a href="<?= URL::site('article/'.$article->id.'/'.$article->slug) ?>">
+<article>
 
-		<?= HTML::chars($article->title) ?>
+	<h2>
+		<a href="<?= URL::site('article/'.$article->id.'/'.$article->slug) ?>">
 
-	</a>
-</h2>
+			<?= HTML::chars($article->title) ?>
 
-<?= Text::markdown($article->content) ?>
+		</a>
+	</h2>
 
-<span class="date_or_time">
+	<section>
 
-	Created: <?= date(Date::DATE_FORMAT.', '.Date::TIME_FORMAT, $article->created) ?>
+		<div class="meta">
+			<abbr title="<?= date(DateTime::ATOM, $article->created) ?>"><?= date('n', $article->created) ?>. <?= Date::$months[date('n', $article->created)] ?>, <?= date('o', $article->created) ?>. gads</abbr>
+			
+			<?php /*
 
-	<? if ($article->show_time_of_last_edit && !empty($article->last_updated)): ?>
+			<span class="pipe">|</span>
+			<a href="#" class="comments"><span>0</span> komentāri</a> un <a href="#" class="reactions"><span>0</span> prieciņi</a>
 
-		<br />
+			*/ ?>
+		</div>
 
-		Last updated: <?= date(Date::DATE_FORMAT.', '.Date::TIME_FORMAT, $article->last_updated) ?>
+	</section>
 
-	<? endif ?>
+	<section>
 
-</span>
+		<?= Text::markdown($article->content) ?>
+
+	</section>
+
+</article>

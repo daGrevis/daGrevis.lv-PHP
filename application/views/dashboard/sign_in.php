@@ -1,3 +1,7 @@
+<h2>
+	<a href="<?= URL::dashboard('sign_in') ?>">Sign in</a>
+</h2>
+
 <form method="post">
 
 	<? if (!empty($errors)): ?>
@@ -12,7 +16,7 @@
 
 	<div>
 
-		<label>Password <input name="password" type="password"></label>
+		<p><label>Password <input name="password" type="password"></label></p>
 
 	</div>
 
