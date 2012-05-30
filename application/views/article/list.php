@@ -17,7 +17,7 @@
 			<section>
 
 				<div class="meta">
-					<abbr title="<?= date(DateTime::ATOM, $article->created) ?>"><?= date('n', $article->created) ?>. <?= Date::$months[date('n', $article->created)] ?>, <?= date('o', $article->created) ?>. gads</abbr>
+					<abbr title="<?= date(DateTime::ATOM, $article->created) ?>"><?= date('j', $article->created) ?>. <?= Date::$months[date('n', $article->created)] ?>, <?= date('o', $article->created) ?>. gads</abbr>
 					
 					<?php /*
 
