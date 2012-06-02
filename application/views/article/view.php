@@ -25,7 +25,7 @@
 
 	<section>
 
-		<?= Text::markdown($article->content) ?>
+		<?= Darkmown::parse($article->content) ?>
 
 	</section>
 

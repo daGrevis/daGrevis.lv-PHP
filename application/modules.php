@@ -7,4 +7,5 @@ Kohana::modules(array(
 	'orm' => MODPATH.'orm', // https://github.com/kohana/orm
 	'unittest' => MODPATH.'unittest', // https://github.com/kohana/unittest
 	'pagination' => MODPATH.'pagination', // https://github.com/kloopko/kohana-pagination
+	'darkmown' => MODPATH.'darkmown', // https://github.com/daGrevis/Darkmown
 ));
