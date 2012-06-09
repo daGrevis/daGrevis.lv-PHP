@@ -15,7 +15,7 @@ class Controller_Dashboard_Finman extends Controller_Template {
 
 		if ($count) {
 
-			$items = Model_Finman_Item::get_items(self::ITEMS_PER_PAGE, $pagination->offset);
+			$items = Model_Finman_Item::get_items($pagination->get_limit(), $pagination->get_offset());
 			$items = AutoModeler::set_data_for_many('Finman_Item', $items);
 
 		} else {
