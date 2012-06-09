@@ -15,6 +15,10 @@
 		padding: 0;
 	}
 
+	::selection {
+		background: #c8e1f3; /* 75% alpha of #268bd2 */
+	}
+
 /**
  * Body:
  */
@@ -22,6 +26,7 @@
 	body {
 		font-family: 'Open Sans', sans-serif;
 		color: rgb(32, 32, 32);
+		overflow-y: scroll;
 	}
 
 /**
