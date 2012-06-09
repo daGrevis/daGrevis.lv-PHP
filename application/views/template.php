@@ -11,6 +11,7 @@
 
 		<link rel="stylesheet" href="<?= URL::stylesheet('normalize-0357529.min.css') ?>" />
 		<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700&amp;subset=latin,latin-ext' />
+		<link rel="stylesheet" href="<?= URL::stylesheet('github-modded.css') ?>" />
 		<link rel="stylesheet" href="<?= URL::stylesheet('common.css') ?>" />
 
 		<? if (!empty($stylesheets)): ?>
@@ -107,7 +108,8 @@
 				load('<?= URL::script('jquery-1.7.2.min.js') ?>');
 
 			})
-			.thenLoad('<?= URL::script('common.js') ?>')
+			.then('<?= URL::script('rainbow-1.1.8.min.js') ?>')
+			.then('<?= URL::script('common.js') ?>')
 			.then('<?= URL::script('google_analytics.js') ?>');
 
 		</script>
