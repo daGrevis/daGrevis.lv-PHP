@@ -39,6 +39,8 @@
 
 	<? endforeach ?>
 
+	<?= $pagination ?>
+
 <? else: ?>
 
 	No articles

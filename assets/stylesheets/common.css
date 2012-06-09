@@ -16,7 +16,7 @@
 	}
 
 	::selection {
-		background: #c8e1f3; /* 75% alpha of #268bd2 */
+		background: rgb(200, 225, 243); /* 75% alpha of #268bd2 */
 	}
 
 /**
@@ -239,4 +239,27 @@ input:not([type="checkbox"]) {
 textarea {
 	width: 40em;
 	height: 20em;
+}
+
+.pagination li {
+	list-style: none;
+}
+
+.pagination a {
+	display: block;
+	float: left;
+	font-size: 0.75em;
+	border: solid 1px rgb(200, 200, 200);
+	margin: 0 .25em;
+	padding: .2em .5em;
+}
+
+.pagination .previous a, .pagination .next a {
+	font-size: .95em;
+	padding-top: 0;
+	padding-bottom: 0
+}
+
+.pagination .active a {
+	background: rgb(225, 225, 225);
 }

@@ -2,6 +2,8 @@
 
 class Model_Blog_Article extends ORM {
 
+	static $table_name = 'blog_articles';
+
 	protected $_created_column = array(
 		'column' => 'created',
 		'format' => true,
@@ -84,6 +86,27 @@ class Model_Blog_Article extends ORM {
 				->order_by('id', 'desc')
 					->find_all()
 					;
+
+	}
+
+	/**
+	 * Gets count of all published articles.
+	 * 
+	 * @return integer Count of articles.
+	 *
+	 * @todo Y U NO USE ALREADY-MADE METHODS?
+	 */
+	function get_count_of_published_articles() {
+
+		$count =
+			DB::select(array(DB::expr('COUNT(*)'), 'count'))
+				->from(self::$table_name)
+				->where('is_published', '=', 1)
+				->execute()
+				->get('count')
+				;
+
+		return (integer)$count;
 
 	}
 

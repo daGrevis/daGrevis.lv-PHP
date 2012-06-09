@@ -6,9 +6,18 @@ class Controller_Article extends Controller_Template {
 
 		$article = ORM::factory('Blog_Article');
 
-		$articles = $article->get_all_published_articles();
+		$count = $article->get_count_of_published_articles();
+
+		$pagination = new Pagination(array(
+			'total_items' => $count,
+			'items_per_page' => 10,
+			'view' => 'pagination',
+		));
+
+		$articles = $article->get_all_published_articles($pagination->get_limit(), $pagination->get_offset());
 
 		$this->view->articles = $articles;
+		$this->view->pagination = $pagination->render();
 
 	}
 
