@@ -114,5 +114,11 @@
 
 		</script>
 
+		<? if (Kohana::is_development()): ?>
+
+			<?= ProfilerToolbar::render(); ?>
+
+		<? endif ?>
+
 	</body>
 </html>

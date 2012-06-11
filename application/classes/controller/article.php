@@ -2,6 +2,8 @@
 
 class Controller_Article extends Controller_Template {
 
+	const ARTICLES_PER_PAGE = 10;
+
 	function action_list() {
 
 		$article = ORM::factory('Blog_Article');
@@ -10,11 +12,14 @@ class Controller_Article extends Controller_Template {
 
 		$pagination = new Pagination(array(
 			'total_items' => $count,
-			'items_per_page' => 10,
-			'view' => 'pagination',
+			'items_per_page' => self::ARTICLES_PER_PAGE,
 		));
 
-		$articles = $article->get_all_published_articles($pagination->get_limit(), $pagination->get_offset());
+		$articles =
+			$article->get_all_published_articles(
+				$pagination->get_limit(),
+				$pagination->get_offset()
+			);
 
 		$this->view->articles = $articles;
 		$this->view->pagination = $pagination->render();

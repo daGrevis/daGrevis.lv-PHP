@@ -241,6 +241,11 @@ textarea {
 	height: 20em;
 }
 
+.pagination {
+	padding: 0; /* Reset. */
+	margin-top: 3em;
+}
+
 .pagination li {
 	list-style: none;
 }
