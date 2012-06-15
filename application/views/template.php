@@ -19,7 +19,6 @@
 			<? foreach ($stylesheets as $stylesheet): ?>
 
 				<link rel="stylesheet" href="<?= URL::stylesheet($stylesheet.'.css') ?>">
-				<script src="<?= URL::stylesheet($stylesheet.'.css') ?>"></script>
 
 			<? endforeach ?>
 
@@ -113,6 +112,20 @@
 			.then('<?= URL::script('google_analytics.js') ?>');
 
 		</script>
+
+		<? if (!empty($scripts)): ?>
+
+			<script>
+
+				<? foreach ($scripts as $script): ?>
+
+					load('<?= URL::script($script.'.js') ?>');
+
+				<? endforeach ?>
+
+			</script>
+
+		<? endif ?>
 
 		<? if (Kohana::is_development()): ?>
 

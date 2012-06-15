@@ -43,6 +43,12 @@
 
 	<div>
 
+		<p><label>Tags <input name="tags" value=""> <span class="tip">(separate them by spaces)</span></label></p>
+
+	</div>
+
+	<div>
+
 		<p>
 			<input type="hidden" name="show_time_of_last_edit" value="0" />
 			<label>
