@@ -100,6 +100,7 @@
 		</footer>
 
 		<script src="<?= URL::script('load-3acd55a.min.js') ?>"></script>
+		
 		<script>
 
 			load('https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js').onError(function() {
@@ -109,7 +110,7 @@
 			})
 			.then('<?= URL::script('rainbow-1.1.8.min.js') ?>')
 			.then('<?= URL::script('common.js') ?>')
-			.then('<?= URL::script('google_analytics.js') ?>');
+			;
 
 		</script>
 
@@ -122,6 +123,16 @@
 					load('<?= URL::script($script.'.js') ?>');
 
 				<? endforeach ?>
+
+			</script>
+
+		<? endif ?>
+
+		<? if (Kohana::is_production()): ?>
+
+			<script>
+
+				load('<?= URL::script('google_analytics.js') ?>');
 
 			</script>
 
