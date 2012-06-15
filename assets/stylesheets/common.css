@@ -164,7 +164,12 @@
 		padding: 0 .5em;
 	}
 
-	h1 a, h2 a, h3 a { /* Reset. */
+	h2 a, h3 a { /* Reset. */
+		background: white;
+		padding: 0;
+	}
+
+	header a { /* Reset. */
 		background: white;
 		padding: 0;
 	}
@@ -180,7 +185,11 @@
 	a:hover {
 		background: rgb(235, 235, 235);
 	}
-	h1 a:hover, h2 a:hover, h3 a:hover { /* Reset. */
+	h2 a:hover, h3 a:hover { /* Reset. */
+		background: white;
+		padding: 0;
+	}
+	header a:hover { /* Reset. */
 		background: white;
 		padding: 0;
 	}

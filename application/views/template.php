@@ -33,8 +33,12 @@
 
 			<header>
 
-				<div id="logo"></div>
-				<h1><a href="<?= URL::site('') ?>">daGrevis.lv</a></h1>
+				<a href="<?= URL::site('') ?>">
+
+					<div id="logo"></div>
+					<h1>daGrevis.lv</h1>
+
+				</a>
 
 				<h2>«Intelligence is the ability to avoid doing work,<br /> yet getting the work done.» <span>/Linus Torvalds/</span></h2>
 
@@ -100,7 +104,7 @@
 		</footer>
 
 		<script src="<?= URL::script('load-3acd55a.min.js') ?>"></script>
-		
+
 		<script>
 
 			load('https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js').onError(function() {
