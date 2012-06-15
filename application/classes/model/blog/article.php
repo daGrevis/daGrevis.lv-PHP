@@ -1,60 +1,84 @@
 <?php
 
-class Model_Blog_Article extends ORM {
+/**
+ * Model for blog's article.
+ */
+class Model_Blog_Article extends AutoModeler {
 
+	/**
+	 * Model name.
+	 * 
+	 * @var string
+	 */
+	static $model_name = 'Blog_Article';
+
+	/**
+	 * Table name.
+	 * 
+	 * @var string
+	 */
+	protected $_table_name = 'blog_articles';
+
+	/**
+	 * Table name.
+	 * 
+	 * @var string
+	 */
 	static $table_name = 'blog_articles';
 
-	protected $_created_column = array(
-		'column' => 'created',
-		'format' => true,
+	protected $_data = array(
+		'id' => '',
+		'title' => '',
+		'slug' => '',
+		'content' => '',
+		'created' => '',
+		'last_updated' => '',
+		'show_time_of_last_edit' => '',
+		'is_published' => '',
 	);
 
-	protected $_updated_column = array(
-		'column' => 'last_updated',
-		'format' => true,
+	/**
+	 * Validation filters.
+	 * 
+	 * @var array
+	 */
+	protected $_filters = array(
+		'title' => array(
+			array('trim'),
+		),
+		'is_published' => array(
+			array('Form::checkboxs_on_to_one')
+		),
 	);
 
-	function filters() {
-		
-		return array(
-			'title' => array(
-				array('trim'),
-			),
-			'show_time_of_last_edit' => array(
-				array('Form::checkboxs_on_to_one')
-			),
-			'is_published' => array(
-				array('Form::checkboxs_on_to_one')
-			),
-		);
-		
-	}
+	/**
+	 * Validation rules.
+	 * 
+	 * @var array
+	 */
+	protected $_rules = array(
+		'title' => array(
+			array('not_empty'),
+			array('max_length', array(':value', 255)),
+		),
+		'content' => array(
+			array('not_empty'),
+			array('max_length', array(':value', 65535)),
+		),
+		'is_published' => array(
+			array('range', array(':value', 0, 1))
+		),
+	);
 
-	function rules() {
-		
-		return array(
-			'title' => array(
-				array('not_empty'),
-				array('max_length', array(':value', 255)),
-			),
-			'content' => array(
-				array('not_empty'),
-				array('max_length', array(':value', 65535)),
-			),
-			'show_time_of_last_edit' => array(
-				array('range', array(':value', 0, 1))
-			),
-			'is_published' => array(
-				array('range', array(':value', 0, 1))
-			),
-		);
-		
-	}
-
+	/**
+	 * Condition that article is published.
+	 * 
+	 * @return Database_Query_Builder_Select
+	 */
 	function published() {
 
 		return
-			$this->where(
+			DB::select()->where(
 				'is_published',
 				'=',
 				1
@@ -77,15 +101,14 @@ class Model_Blog_Article extends ORM {
 
 	function get_all_published_articles($limit = null, $offset = null) {
 
-		$limit === null ?: $this->limit($limit);
-		$offset === null ?: $this->offset($offset);
-
 		return
-			$this
-				->published()
-				->order_by('id', 'desc')
-					->find_all()
-					;
+			$this->load(
+				DB::select('id', 'slug', 'title', 'content', 'created')
+					->published()
+					->limit($limit)
+					->offset($limit)
+					->order_by('id', 'desc')
+			);
 
 	}
 

@@ -60,18 +60,6 @@
 	<div>
 
 		<p>
-			<input type="hidden" name="show_time_of_last_edit" value="0" />
-			<label>
-				<input type="checkbox" name="show_time_of_last_edit" <?= $article->show_time_of_last_edit === NULL || $article->show_time_of_last_edit ? 'checked="checked"' : '' ?> />
-				Show time of last edit
-			</label>
-		</p>
-
-	</div>
-
-	<div>
-
-		<p>
 			<input type="hidden" name="is_published" value="0" />
 			<label>
 				<input type="checkbox" name="is_published" <?= $article->is_published === NULL || $article->is_published ? 'checked="checked"' : '' ?> />
