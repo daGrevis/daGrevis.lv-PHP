@@ -1,30 +1,30 @@
 <?php
 
 /**
- * Model for blog's tag.
+ * Model for article's tag.
  */
-class Model_Blog_Tag extends AutoModeler {
+class Model_Blog_Article_Tag extends AutoModeler {
 
 	/**
 	 * Model name.
 	 * 
 	 * @var string
 	 */
-	static $model_name = 'Blog_Tag';
+	static $model_name = 'Blog_Article_Tag';
 
 	/**
 	 * Table name.
 	 * 
 	 * @var string
 	 */
-	protected $_table_name = 'blog_tags';
+	protected $_table_name = 'blog_article_tags';
 
 	/**
 	 * Table name.
 	 * 
 	 * @var string
 	 */
-	static $table_name = 'blog_tags';
+	static $table_name = 'blog_article_tags';
 
 	/**
 	 * Table columns.

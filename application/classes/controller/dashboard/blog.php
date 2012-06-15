@@ -24,7 +24,7 @@ class Controller_Dashboard_Blog extends Controller_Template {
 
 		}
 
-		$tags = Model_Blog_Tag::get_tags_by_article_id($article_id);
+		$tags = Model_Blog_Article_Tag::get_tags_by_article_id($article_id);
 
 		if ($this->request->method() === Request::POST) {
 
