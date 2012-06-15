@@ -19,7 +19,7 @@ class Pagination extends Kohana_Pagination {
 	/**
 	 * Helper: gets offset.
 	 * 
-	 * @return string Limit.
+	 * @return string Offset.
 	 */
 	function get_offset() {
 
