@@ -43,7 +43,17 @@
 
 	<div>
 
-		<p><label>Tags <input name="tags" value=""> <span class="tip">(separate them by spaces)</span></label></p>
+		<?
+
+		$tags = implode(', ', array_map(function($tag) {
+
+			return $tag->get_title_with_hashtag();
+
+		}, $tags));
+
+		?>
+
+		<p><label>Tags <input name="tags" value="<?= HTML::chars($tags) ?>"> <span class="tip">(separate them by spaces)</span></label></p>
 
 	</div>
 

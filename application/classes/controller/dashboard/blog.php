@@ -24,6 +24,8 @@ class Controller_Dashboard_Blog extends Controller_Template {
 
 		}
 
+		$tags = Model_Blog_Tag::get_tags_by_article_id($article_id);
+
 		if ($this->request->method() === Request::POST) {
 
 			if (!Security::check($this->request->post('csrf_token'))) {
@@ -73,6 +75,7 @@ class Controller_Dashboard_Blog extends Controller_Template {
 		$this->view->success = Session::instance()->get_once('Article.success');
 
 		$this->view->article = $article;
+		$this->view->tags = $tags;
 
 	}
 
