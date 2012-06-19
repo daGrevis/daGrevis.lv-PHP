@@ -31,6 +31,38 @@
 		
 		<div id="wrapper">
 
+			<ul id="social_icons">
+
+				<li>
+					<a href="http://twitter.com/#!/daGrevis" title="Twitter" target="_blank" class="twitter">Twitter</a>
+				</li>
+
+				<li>
+					<a href="http://facebook.com/daGrevis" title="Facebook" target="_blank" class="facebook">Facebook</a>
+				</li>
+
+				<li>
+					<a href="http://last.fm/user/daGrevis" title="Last.fm" target="_blank" class="last_fm">Last.fm</a>
+				</li>
+
+				<li>
+					<a href="http://reddit.com/user/daGrevis/" title="Reddit" target="_blank" class="reddit">Reddit</a>
+				</li>
+
+				<li>
+					<a href="http://stackoverflow.com/users/458610/dagrevis" title="StackOverflow" target="_blank" class="stackoverflow">StackOverflow</a>
+				</li>
+
+				<li>
+					<a href="https://github.com/daGrevis" title="GitHub" target="_blank" class="github">GitHub</a>
+				</li>
+
+				<li>
+					<a href="http://linkedin.com/in/dagrevis" title="LinkedIn" target="_blank" class="linkedin">LinkedIn</a>
+				</li>
+
+			</div>
+
 			<header>
 
 				<a href="<?= URL::site('') ?>">
