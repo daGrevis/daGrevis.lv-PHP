@@ -1,4 +1,4 @@
-<ul class="pagination">
+<ul id="pagination">
 
 	<? if ($first_page !== false): ?>
 

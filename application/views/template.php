@@ -145,14 +145,11 @@
 
 			})
 			.then('<?= URL::script('rainbow-1.1.8.min.js') ?>')
+			.then('<?= URL::script('raphael-2.1.0.min.js') ?>')
 			.then('<?= URL::script('common.js') ?>')
 			;
 
-		</script>
-
-		<? if (!empty($scripts)): ?>
-
-			<script>
+			<? if (!empty($scripts)): ?>
 
 				<? foreach ($scripts as $script): ?>
 
@@ -160,19 +157,15 @@
 
 				<? endforeach ?>
 
-			</script>
+			<? endif ?>
 
-		<? endif ?>
-
-		<? if (Kohana::is_production()): ?>
-
-			<script>
+			<? if (Kohana::is_production()): ?>
 
 				load('<?= URL::script('google_analytics.js') ?>');
 
-			</script>
+			<? endif ?>
 
-		<? endif ?>
+		</script>
 
 		<? if (Kohana::is_development()): ?>
 

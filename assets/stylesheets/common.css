@@ -58,7 +58,6 @@
 	}
 
 	#logo { /* Isn't the actual code! */
-		background: url('../images/star.png');
 		width: 48px;
 		height: 48px;
 		margin-right: .75em;
@@ -74,12 +73,6 @@
 		margin-right: 3%;
 		width: 57%; /* 62 (golden ratio) - 5 (margin) */
 		float: right;
-	}
-
-	pre {
-		width: 80%;
-		padding: .625em;
-		margin: 1.5em 0;
 	}
 
 	.meta {
@@ -130,6 +123,9 @@
 		font-size: 1.3em;
 	}
 	#content h3 {
+		font-size: 1.1em;
+	}
+	#content h4 {
 		font-size: 1em;
 		font-weight: 600;
 	}
@@ -142,11 +138,6 @@
 
 	p, blockquote, ul, ol {
 		font-size: .9em;
-	}
-
-	pre code {
-		font-family: 'Meslo LG L DZ', 'Meslo LG M DZ', 'Meslo LG S DZ', 'Monaco', 'Lucida Console', monospace;
-		font-size: .7em;
 	}
 
 	.meta {
@@ -173,7 +164,13 @@
 	}
 
 	blockquote {
-		margin: 2em 1em;
+		margin: -2em 0 2em 3em;
+		line-height: 1.4em;
+	}
+
+	.left_quote {
+		position: relative;
+		top: .5em;
 	}
 
 /**
@@ -243,16 +240,13 @@ textarea {
 	height: 20em;
 }
 
-.pagination {
+#pagination {
 	padding: 0; /* Reset. */
 	margin-top: 3em;
-}
-
-.pagination li {
 	list-style: none;
 }
 
-.pagination a {
+#pagination a {
 	display: block;
 	float: left;
 	font-size: 0.75em;
@@ -261,15 +255,19 @@ textarea {
 	padding: .2em .5em;
 }
 
-.pagination .previous a, .pagination .next a {
+#pagination .previous a, #pagination .next a {
 	font-size: .95em;
 	padding-top: 0;
 	padding-bottom: 0
 }
 
-.pagination .active a {
+#pagination .active a {
 	background: rgb(225, 225, 225);
 }
+
+/**
+ * Social icons.
+ */
 
 #social_icons {
 	padding: 0;
@@ -318,4 +316,24 @@ textarea {
 
 #social_icons .linkedin {
 	background-position: -144px;
+}
+
+/**
+ * Pre and code elements.
+ */
+
+pre, *:not(pre) > code {
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+	padding: .625em;
+	margin: 1.5em 0;
+}
+
+pre {
+	width: 80%;
+}
+
+code {
+	font-family: 'Meslo LG L DZ', 'Meslo LG M DZ', 'Meslo LG S DZ', 'Monaco', 'Lucida Console', monospace;
+	font-size: 11px; /* Not EMs! #XXX */
 }
