@@ -81,6 +81,9 @@
 
 		});
 
+		// Fixes that after reload, if page is scrolled where arrow should be faded in - it is not faded in.
+		$(window).trigger('scroll');
+
 		/**
 		 * Focuses on first input. For usability.
 		 */
