@@ -39,6 +39,11 @@ Route::set('page', 'page/<id>', array('id' => '\d+'))
 		'action'     => 'view',
 	));
 
+Route::set('error', 'error/<action>', array('action' => '[0-9]+'))
+	->defaults(array(
+		'controller' => 'error'
+	));
+
 Route::set('default', '(<controller>(/<action>(/<id>(/<id2>(/<id3>(/<id4>))))))')
 	->defaults(array(
 		'controller' => 'landing',
