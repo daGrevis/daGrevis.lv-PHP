@@ -32,7 +32,7 @@
 				.attr({
 					'fill': '#202020',
 					'stroke': '#202020',
-					'transform': 's.75'
+					'transform': 's.7'
 				})
 				;
 
@@ -57,7 +57,7 @@
 			.attr({
 				'fill': '#202020',
 				'stroke': '#202020',
-				'transform': 't-4,-4 s.70'
+				'transform': 't-4,-4 s.7'
 			})
 			;
 

@@ -164,13 +164,14 @@
 	}
 
 	blockquote {
-		margin: -2em 0 2em 3em;
+		margin: 3em 0 1.5em 2.5em;
 		line-height: 1.4em;
 	}
 
 	.left_quote {
-		position: relative;
-		top: .5em;
+		width: 32px;
+		height: 24px;
+		margin-bottom: -3em;
 	}
 
 /**
