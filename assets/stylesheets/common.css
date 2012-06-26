@@ -2,7 +2,7 @@
  * Gloden ratio:
  * 960px
  * 38% | 62%
- * 
+ *
  * Base color: rgb(32, 32, 32)
  */
 
@@ -336,4 +336,17 @@ pre {
 code {
 	font-family: 'Meslo LG L DZ', 'Meslo LG M DZ', 'Meslo LG S DZ', 'Monaco', 'Lucida Console', monospace;
 	font-size: 11px; /* Not EMs! #XXX */
+}
+
+/**
+ * Arrow.
+ */
+
+#arrow {
+	position: fixed;
+	bottom: 2%;
+	left: 1%;
+	width: 24px;
+	height: 24px;
+	display: none;
 }

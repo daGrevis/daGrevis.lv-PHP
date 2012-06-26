@@ -6,7 +6,7 @@
 
 		<meta name="keywords" content="daGrevis, daGrevis.lv, blogs, portfolio" />
 		<meta name="description" content="Blogs par mani un lietām ap mani." />
-		
+
 		<link rel="shortcut icon" href="<?= URL::image('favicon.png') ?>" />
 
 		<link rel="stylesheet" href="<?= URL::stylesheet('normalize-0357529.min.css') ?>" />
@@ -28,7 +28,7 @@
 
 	</head>
 	<body>
-		
+
 		<div id="wrapper">
 
 			<ul id="social_icons">
@@ -134,6 +134,8 @@
 			</section>
 
 		</footer>
+
+		<div id="arrow"></div>
 
 		<script src="<?= URL::script('load-3acd55a.min.js') ?>"></script>
 
