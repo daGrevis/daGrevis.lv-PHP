@@ -1,26 +1,26 @@
 <h2>
-	<a href="<?= URL::dashboard() ?>">Dashboard</a>
-	— <a href="<?= URL::dashboard('cms') ?>">CMS</a>
+	<a href="<?php echo URL::dashboard() ?>">Dashboard</a>
+	— <a href="<?php echo URL::dashboard('cms') ?>">CMS</a>
 </h2>
 
-<? if ($pages): ?>
+<?php if ($pages): ?>
 
 	<ul>
 
-		<? foreach ($pages as $page): ?>
+		<?php foreach ($pages as $page): ?>
 
 			<li>
-				<a href="<?= URL::site('dashboard/cms/edit/'.$page->id) ?>">
-					<?= HTML::chars($page->title) ?>
+				<a href="<?php echo URL::site('dashboard/cms/edit/'.$page->id) ?>">
+					<?php echo HTML::chars($page->title) ?>
 				</a>
 			</li>
 
-		<? endforeach ?>
+		<?php endforeach ?>
 
 	</ul>
 
-<? else: ?>
+<?php else: ?>
 
 	<p>No results</p>
 
-<? endif ?>
+<?php endif ?>

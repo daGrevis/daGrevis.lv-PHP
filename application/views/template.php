@@ -7,24 +7,24 @@
 		<meta name="keywords" content="daGrevis, daGrevis.lv, blogs, portfolio" />
 		<meta name="description" content="Blogs par mani un lietām ap mani." />
 
-		<link rel="shortcut icon" href="<?= URL::image('favicon.png') ?>" />
+		<link rel="shortcut icon" href="<?php echo URL::image('favicon.png') ?>" />
 
-		<link rel="stylesheet" href="<?= URL::stylesheet('normalize-0357529.min.css') ?>" />
+		<link rel="stylesheet" href="<?php echo URL::stylesheet('normalize-0357529.min.css') ?>" />
 		<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700&amp;subset=latin,latin-ext' />
-		<link rel="stylesheet" href="<?= URL::stylesheet('github-modded.css') ?>" />
-		<link rel="stylesheet" href="<?= URL::stylesheet('common.css') ?>" />
+		<link rel="stylesheet" href="<?php echo URL::stylesheet('github-modded.css') ?>" />
+		<link rel="stylesheet" href="<?php echo URL::stylesheet('common.css') ?>" />
 
-		<? if (!empty($stylesheets)): ?>
+		<?php if (!empty($stylesheets)): ?>
 
-			<? foreach ($stylesheets as $stylesheet): ?>
+			<?php foreach ($stylesheets as $stylesheet): ?>
 
-				<link rel="stylesheet" href="<?= URL::stylesheet($stylesheet.'.css') ?>">
+				<link rel="stylesheet" href="<?php echo URL::stylesheet($stylesheet.'.css') ?>">
 
-			<? endforeach ?>
+			<?php endforeach ?>
 
-		<? endif ?>
+		<?php endif ?>
 
-		<title><?= !empty($title) ? $title.' | ' : '' ?>daGrevis.lv</title>
+		<title><?php echo !empty($title) ? $title.' | ' : '' ?>daGrevis.lv</title>
 
 	</head>
 	<body>
@@ -65,7 +65,7 @@
 
 			<header>
 
-				<a href="<?= URL::site('') ?>">
+				<a href="<?php echo URL::site('') ?>">
 
 					<div id="logo"></div>
 					<h1>daGrevis.lv</h1>
@@ -78,19 +78,19 @@
 
 			<div id="content">
 
-				<?= $body ?>
+				<?php echo $body ?>
 
 				<?php /*
 
-				<? if (A1::signed_in()): ?>
+				<?php if (A1::signed_in()): ?>
 
 					<div id="to_dashboard">
 
-						<a href="<?= URL::dashboard() ?>">To Dashboard</a>
+						<a href="<?php echo URL::dashboard() ?>">To Dashboard</a>
 
 					</div>
 
-				<? endif ?>
+				<?php endif ?>
 
 				*/ ?>
 
@@ -137,43 +137,43 @@
 
 		<div id="arrow"></div>
 
-		<script src="<?= URL::script('load-3acd55a.min.js') ?>"></script>
+		<script src="<?php echo URL::script('load-3acd55a.min.js') ?>"></script>
 
 		<script>
 
 			load('https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js').onError(function() {
 
-				load('<?= URL::script('jquery-1.7.2.min.js') ?>');
+				load('<?php echo URL::script('jquery-1.7.2.min.js') ?>');
 
 			})
-			.then('<?= URL::script('rainbow-1.1.8.min.js') ?>')
-			.then('<?= URL::script('raphael-2.1.0.min.js') ?>')
-			.then('<?= URL::script('common.js') ?>')
+			.then('<?php echo URL::script('rainbow-1.1.8.min.js') ?>')
+			.then('<?php echo URL::script('raphael-2.1.0.min.js') ?>')
+			.then('<?php echo URL::script('common.js') ?>')
 			;
 
-			<? if (!empty($scripts)): ?>
+			<?php if (!empty($scripts)): ?>
 
-				<? foreach ($scripts as $script): ?>
+				<?php foreach ($scripts as $script): ?>
 
-					load('<?= URL::script($script.'.js') ?>');
+					load('<?php echo URL::script($script.'.js') ?>');
 
-				<? endforeach ?>
+				<?php endforeach ?>
 
-			<? endif ?>
+			<?php endif ?>
 
-			<? if (Kohana::is_production()): ?>
+			<?php if (Kohana::is_production()): ?>
 
-				load('<?= URL::script('google_analytics.js') ?>');
+				load('<?php echo URL::script('google_analytics.js') ?>');
 
-			<? endif ?>
+			<?php endif ?>
 
 		</script>
 
-		<? if (Kohana::is_development()): ?>
+		<?php if (Kohana::is_development()): ?>
 
-			<?= ProfilerToolbar::render(); ?>
+			<?php echo ProfilerToolbar::render(); ?>
 
-		<? endif ?>
+		<?php endif ?>
 
 	</body>
 </html>

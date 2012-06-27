@@ -1,4 +1,4 @@
-<form action="<?= URL::current() ?>" method="post">
+<form action="<?php echo URL::current() ?>" method="post">
 
 	<div>
 
@@ -20,8 +20,8 @@
 
 				<?php foreach ($categories as $category): ?>
 
-					<option value="<?= $category['id'] ?>">
-						<?= $category['title'] ?>
+					<option value="<?php echo $category['id'] ?>">
+						<?php echo $category['title'] ?>
 					</option>
 
 				<?php endforeach ?>

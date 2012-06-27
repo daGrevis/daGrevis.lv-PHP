@@ -1,18 +1,18 @@
 <h2>
-	<a href="<?= URL::dashboard('sign_in') ?>">Sign in</a>
+	<a href="<?php echo URL::dashboard('sign_in') ?>">Sign in</a>
 </h2>
 
 <form method="post">
 
-	<? if (!empty($errors)): ?>
+	<?php if (!empty($errors)): ?>
 
 		<div class="error_message">
 			There were one or more errors
 		</div>
 
-	<? endif ?>
+	<?php endif ?>
 
-	<input name="csrf_token" type="hidden" value="<?= Security::token() ?>">
+	<input name="csrf_token" type="hidden" value="<?php echo Security::token() ?>">
 
 	<div>
 

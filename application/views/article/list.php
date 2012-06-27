@@ -1,14 +1,14 @@
-<? if (count($articles)): ?>
+<?php if (count($articles)): ?>
 
-	<? foreach ($articles as $article): ?>
+	<?php foreach ($articles as $article): ?>
 
 		<article>
 
 			<h2>
 
-				<a href="<?= URL::site('article/'.$article->id.'/'.$article->slug) ?>">
+				<a href="<?php echo URL::site('article/'.$article->id.'/'.$article->slug) ?>">
 
-					<? echo HTML::chars($article->title) ?>
+					<?php echo HTML::chars($article->title) ?>
 
 				</a>
 
@@ -17,8 +17,8 @@
 			<section>
 
 				<div class="meta">
-					<abbr title="<?= date(DateTime::ATOM, $article->created) ?>"><?= date('j', $article->created) ?>. <?= Date::$months[date('n', $article->created)] ?>, <?= date('o', $article->created) ?>. gads</abbr>
-					
+					<abbr title="<?php echo date(DateTime::ATOM, $article->created) ?>"><?php echo date('j', $article->created) ?>. <?php echo Date::$months[date('n', $article->created)] ?>, <?php echo date('o', $article->created) ?>. gads</abbr>
+
 					<?php /*
 
 					<span class="pipe">|</span>
@@ -31,18 +31,18 @@
 
 			<section>
 
-				<?= Darkmown::parse($article->content) ?>
+				<?php echo Darkmown::parse($article->content) ?>
 
 			</section>
 
 		</article>
 
-	<? endforeach ?>
+	<?php endforeach ?>
 
-	<?= $pagination ?>
+	<?php echo $pagination ?>
 
-<? else: ?>
+<?php else: ?>
 
 	No articles
 
-<? endif ?>
+<?php endif ?>

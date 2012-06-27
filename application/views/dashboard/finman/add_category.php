@@ -1,4 +1,4 @@
-<form action="<?= URL::current() ?>" method="post">
+<form action="<?php echo URL::current() ?>" method="post">
 
 	<div>
 

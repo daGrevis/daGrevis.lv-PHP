@@ -9,28 +9,28 @@
 			<th>Category</th>
 		</tr>
 
-		<? foreach ($items as $item): ?>
+		<?php foreach ($items as $item): ?>
 
 			<tr>
 				<td>
-					#<?= $item->id ?>
+					#<?php echo $item->id ?>
 				</td>
 				<td class="title">
-					<?= HTML::chars(Text::limit_chars($item->title, 40, '...')) ?>
+					<?php echo HTML::chars(Text::limit_chars($item->title, 40, '...')) ?>
 				</td>
 				<td>
-					<?= Num::format($item->price / 100, 2) ?> Ls
+					<?php echo Num::format($item->price / 100, 2) ?> Ls
 				</td>
 				<td>
-					<?= $item->category ?>
+					<?php echo $item->category ?>
 				</td>
 			</tr>
-			
+
 		<?php endforeach ?>
 
 	</table>
 
-	<?= $pagination ?>
+	<?php echo $pagination ?>
 
 <?php else: ?>
 
@@ -39,6 +39,6 @@
 <?php endif ?>
 
 <ul>
-	<li><a href="<?= URL::dashboard('finman/add_item') ?>">Add item</a></li>
-	<li><a href="<?= URL::dashboard('finman/add_category') ?>">Add category</a></li>
+	<li><a href="<?php echo URL::dashboard('finman/add_item') ?>">Add item</a></li>
+	<li><a href="<?php echo URL::dashboard('finman/add_category') ?>">Add category</a></li>
 </ul>

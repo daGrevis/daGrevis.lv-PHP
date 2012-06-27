@@ -1,5 +1,5 @@
 <h2>
-	<a href="<?= URL::dashboard() ?>">Dashboard</a>
+	<a href="<?php echo URL::dashboard() ?>">Dashboard</a>
 </h2>
 
 <p>Ja tu esi piedzēries — labāk te neko neraksti! ;D</p>
@@ -20,4 +20,4 @@
 </ul>
 
 <br />
-<p><a href="<?= URL::dashboard('sign_out') ?>">Sign out</a></p>
+<p><a href="<?php echo URL::dashboard('sign_out') ?>">Sign out</a></p>

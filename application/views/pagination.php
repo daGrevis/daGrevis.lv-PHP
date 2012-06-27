@@ -1,32 +1,32 @@
 <ul id="pagination">
 
-	<? if ($first_page !== false): ?>
+	<?php if ($first_page !== false): ?>
 
 		<li class="previous">
-			<a href="<?= HTML::chars($page->url($previous_page)) ?>">
+			<a href="<?php echo HTML::chars($page->url($previous_page)) ?>">
 				&laquo;
 			</a>
 		</li>
 
-	<? endif ?>
+	<?php endif ?>
 
-	<? for ($i = 1; $i <= $total_pages; $i++): ?>
+	<?php for ($i = 1; $i <= $total_pages; $i++): ?>
 
-		<li <?= $i == $current_page ? 'class="active"' : '' ?>>
-			<a href="<?= HTML::chars($page->url($i)) ?>">
-				<?= $i ?>
+		<li <?php echo $i == $current_page ? 'class="active"' : '' ?>>
+			<a href="<?php echo HTML::chars($page->url($i)) ?>">
+				<?php echo $i ?>
 			</a>
 		</li>
 
-	<? endfor ?>
+	<?php endfor ?>
 
-	<? if ($next_page !== false): ?>
+	<?php if ($next_page !== false): ?>
 
 		<li class="next">
-			<a href="<?= HTML::chars($page->url($next_page)) ?>">
+			<a href="<?php echo HTML::chars($page->url($next_page)) ?>">
 				&raquo;
 			</a>
 		</li>
-	
-	<? endif ?>
+
+	<?php endif ?>
 </ul>

@@ -1,1 +1,1 @@
-<?= $list ?>
+<?php echo $list ?>
