@@ -17,7 +17,7 @@ class Controller_Dashboard_Blog extends Controller_Template {
 		$article_id = $this->request->param('id');
 
 		$article = ORM::factory('Blog_Article', $article_id);
-		
+
 		if ($article_id && !$article->loaded()) {
 
 			throw new HTTP_Exception_404("Not found!");
@@ -79,6 +79,22 @@ class Controller_Dashboard_Blog extends Controller_Template {
 
 	}
 
+	function action_preview() {
+
+		$article_id = $this->request->param('id');
+
+		$article = ORM::factory('Blog_Article', $article_id);
+
+		if ($article_id && !$article->loaded()) {
+
+			throw new HTTP_Exception_404("Not found!");
+
+		}
+
+		$this->view->article = $article;
+
+	}
+
 	function action_delete() {
 
 		$article_id = $this->request->param('id');
@@ -99,7 +115,7 @@ class Controller_Dashboard_Blog extends Controller_Template {
 		$article = ORM::factory('Blog_Article');
 
 		$rows_affected = $article->blind_delete($article_id);
-		
+
 		if (!$rows_affected) {
 
 			throw new HTTP_Exception_404("Not found!");
@@ -107,7 +123,7 @@ class Controller_Dashboard_Blog extends Controller_Template {
 		}
 
 		$this->request->redirect('dashboard/blog');
-		
+
 	}
 
 }
