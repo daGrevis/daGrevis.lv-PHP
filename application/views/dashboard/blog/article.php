@@ -59,13 +59,7 @@
 
 	<div>
 
-		<p>
-			<input type="hidden" name="show_time_of_last_edit" value="0" />
-			<label>
-				<input type="checkbox" name="show_time_of_last_edit" <?php echo $article->show_time_of_last_edit === NULL || $article->show_time_of_last_edit ? 'checked="checked"' : '' ?> />
-				Show time of last edit
-			</label>
-		</p>
+		<p><label>Tweet ID <input name="tweet_id" value="<?php echo HTML::chars($article->tweet_id) ?>"></label></p>
 
 	</div>
 
@@ -75,7 +69,7 @@
 			<input type="hidden" name="is_published" value="0" />
 			<label>
 				<input type="checkbox" name="is_published" <?php echo $article->is_published === NULL || $article->is_published ? 'checked="checked"' : '' ?> />
-				Is published
+				Is published (<a href="<?php echo URL::dashboard('blog/preview/'.$article->id) ?>">view preview</a>)
 			</label>
 		</p>
 

@@ -39,6 +39,7 @@ class Controller_Dashboard_Blog extends Controller_Template {
 				array(
 					'title',
 					'content',
+					'tweet_id',
 					'show_time_of_last_edit',
 					'is_published',
 				)

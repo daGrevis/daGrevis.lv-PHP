@@ -1,7 +1,7 @@
 <article>
 
 	<h2>
-		<a href="<?php echo URL::site('article/'.$article->id.'/'.$article->slug) ?>">
+		<a href="<?php echo URL::site('article/'.$article->id.'/'.HTML::chars($article->slug)) ?>">
 
 			<?php echo HTML::chars($article->title) ?>
 
@@ -26,6 +26,24 @@
 	<section>
 
 		<?php echo Darkmown::parse($article->content) ?>
+
+	</section>
+
+	<section id="article_links">
+
+		<p>Raksta links <input type="text" value="<?php echo URL::site('article/'.$article->id.'/'.HTML::chars($article->slug), 'http') ?>" readonly="readonly" /></p>
+
+		<?php if ($article->tweet_id): ?>
+
+			<p>
+
+				Tvīta links <input type="text" value="http://twitter.com/daGrevis_lv/status/<?php echo HTML::chars($article->tweet_id) ?>" readonly="readonly" />
+
+				<a href="http://twitter.com/daGrevis_lv/status/<?php echo HTML::chars($article->tweet_id) ?>" target="_blank" id="loop" ><span></span></a>
+
+			</p>
+
+		<?php endif ?>
 
 	</section>
 

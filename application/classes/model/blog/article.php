@@ -9,29 +9,24 @@ class Model_Blog_Article extends ORM {
 		'format' => true,
 	);
 
-	protected $_updated_column = array(
-		'column' => 'last_updated',
-		'format' => true,
-	);
-
 	function filters() {
-		
+
 		return array(
 			'title' => array(
 				array('trim'),
 			),
-			'show_time_of_last_edit' => array(
-				array('Form::checkboxs_on_to_one')
+			'tweet_id' => array(
+				array('trim'),
 			),
 			'is_published' => array(
 				array('Form::checkboxs_on_to_one')
 			),
 		);
-		
+
 	}
 
 	function rules() {
-		
+
 		return array(
 			'title' => array(
 				array('not_empty'),
@@ -41,14 +36,15 @@ class Model_Blog_Article extends ORM {
 				array('not_empty'),
 				array('max_length', array(':value', 65535)),
 			),
-			'show_time_of_last_edit' => array(
-				array('range', array(':value', 0, 1))
+			'tweet_id' => array(
+				array('max_length', array(':value', 255)),
+				array('digit'),
 			),
 			'is_published' => array(
 				array('range', array(':value', 0, 1))
 			),
 		);
-		
+
 	}
 
 	function published() {
@@ -91,7 +87,7 @@ class Model_Blog_Article extends ORM {
 
 	/**
 	 * Gets count of all published articles.
-	 * 
+	 *
 	 * @return integer Count of articles.
 	 */
 	function get_count_of_published_articles() {

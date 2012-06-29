@@ -149,15 +149,20 @@
 			.then('<?php echo URL::script('rainbow-1.1.8.min.js') ?>')
 			.then('<?php echo URL::script('raphael-2.1.0.min.js') ?>')
 			.then('<?php echo URL::script('common.js') ?>')
-			;
 
 			<?php if (!empty($scripts)): ?>
 
 				<?php foreach ($scripts as $script): ?>
 
-					load('<?php echo URL::script($script.'.js') ?>');
+					.then('<?php echo URL::script($script.'.js') ?>')
 
 				<?php endforeach ?>
+
+				;
+
+			<?php else: ?>
+
+			;
 
 			<?php endif ?>
 

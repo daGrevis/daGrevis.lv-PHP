@@ -88,7 +88,7 @@ class Controller_Template extends Controller {
 
 			if (file_exists('assets/scripts/'.$this->conventions[0].'/'.$this->conventions[1].'/'.$this->conventions[2].'.js')) {
 
-				$this->scripts[] = $this->conventions[0].'/'.$this->conventions[1];
+				$this->scripts[] = $this->conventions[0].'/'.$this->conventions[1].'/'.$this->conventions[2];
 
 			}
 

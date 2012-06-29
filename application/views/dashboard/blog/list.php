@@ -12,7 +12,6 @@
 			<th>Title</th>
 			<th>Created</th>
 			<th>Last updated</th>
-			<th>Show time of last edit</th>
 			<th>Is published</th>
 			<th></th>
 		</tr>
@@ -33,9 +32,6 @@
 				</td>
 				<td>
 					<?php echo $article->last_updated ? date(Date::DATE_FORMAT.', '.DATE::TIME_FORMAT, $article->last_updated) : 'N/A' ?>
-				</td>
-				<td>
-					<?php echo $article->show_time_of_last_edit ? 'True' : 'False' ?>
 				</td>
 				<td>
 					<?php echo $article->is_published ? 'True' : 'False' ?>

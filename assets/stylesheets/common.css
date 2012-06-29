@@ -351,3 +351,21 @@ code {
 	height: 24px;
 	display: none;
 }
+
+#article_links {
+	padding-top: 3em;
+}
+
+#article_links input {
+	width: 30em;
+}
+
+#loop {
+	background: none !important;
+}
+
+#loop span {
+	width: 28px;
+	height: 24px;
+	display: inline-block;
+}
