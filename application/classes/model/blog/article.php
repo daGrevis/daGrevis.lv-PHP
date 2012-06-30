@@ -9,6 +9,11 @@ class Model_Blog_Article extends ORM {
 		'format' => true,
 	);
 
+	protected $_updated_column = array(
+		'column' => 'last_updated',
+		'format' => true,
+	);
+
 	function filters() {
 
 		return array(
