@@ -5,19 +5,17 @@
 		<article>
 
 			<h2>
-
-				<a href="<?php echo URL::site('article/'.$article->id.'/'.$article->slug) ?>">
+				<a href="<?php echo URL::site('article/'.$article->id.'/'.HTML::chars($article->slug)) ?>">
 
 					<?php echo HTML::chars($article->title) ?>
 
 				</a>
-
 			</h2>
 
 			<section>
 
 				<div class="meta">
-					<abbr title="<?php echo date(DateTime::ATOM, $article->created) ?>"><?php echo date('j', $article->created) ?>. <?php echo Date::$months[date('n', $article->created)] ?>, <?php echo date('o', $article->created) ?>. gads</abbr>
+					<abbr title="<?php echo date('d/m/y, G:i:s', $article->created) ?>"><?php echo date('j', $article->created) ?>. <?php echo Date::$months[date('n', $article->created)] ?>, <?php echo date('o', $article->created) ?>. gads</abbr>
 
 					<?php /*
 
