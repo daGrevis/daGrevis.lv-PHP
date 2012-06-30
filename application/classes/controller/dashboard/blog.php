@@ -78,6 +78,8 @@ class Controller_Dashboard_Blog extends Controller_Template {
 		$this->view->article = $article;
 		$this->view->tags = $tags;
 
+		$this->scripts[] = 'autosize-1.9.min';
+
 	}
 
 	function action_preview() {
