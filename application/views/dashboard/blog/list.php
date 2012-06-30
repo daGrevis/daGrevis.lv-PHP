@@ -28,10 +28,10 @@
 					</a>
 				</td>
 				<td>
-					<?php echo date(Date::DATE_FORMAT.', '.DATE::TIME_FORMAT, $article->created) ?>
+					<?php echo date('d/m/y, G:i:s', $article->created) ?>
 				</td>
 				<td>
-					<?php echo $article->last_updated ? date(Date::DATE_FORMAT.', '.DATE::TIME_FORMAT, $article->last_updated) : 'N/A' ?>
+					<?php echo $article->last_updated ? date('d/m/y, G:i:s', $article->last_updated) : 'N/A' ?>
 				</td>
 				<td>
 					<?php echo $article->is_published ? 'True' : 'False' ?>
