@@ -369,3 +369,11 @@ code {
 	height: 24px;
 	display: inline-block;
 }
+
+/**
+ * Utils.
+ */
+
+.clearer {
+	clear: both;
+}

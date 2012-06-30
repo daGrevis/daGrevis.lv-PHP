@@ -30,3 +30,5 @@
 
 	<?php endif ?>
 </ul>
+
+<div class="clearer"></div>

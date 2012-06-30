@@ -52,3 +52,5 @@
 	<p>No articles</p>
 
 <?php endif ?>
+
+<p><a href="<?php echo URL::dashboard('blog/article') ?>">New article</a></p>
