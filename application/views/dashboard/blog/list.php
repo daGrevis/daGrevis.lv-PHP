@@ -45,6 +45,8 @@
 
 	</table>
 
+	<?php echo $pagination ?>
+
 <?php else: ?>
 
 	<p>No articles</p>

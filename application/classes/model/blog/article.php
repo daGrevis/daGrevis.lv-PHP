@@ -91,7 +91,21 @@ class Model_Blog_Article extends ORM {
 	}
 
 	/**
-	 * Gets count of all published articles.
+	 * Gets count of articles.
+	 *
+	 * @return integer Count of articles.
+	 */
+	function get_count_of_articles() {
+
+		$count =
+			$this->count_all();
+
+		return (integer)$count;
+
+	}
+
+	/**
+	 * Gets count of published articles.
 	 *
 	 * @return integer Count of articles.
 	 */

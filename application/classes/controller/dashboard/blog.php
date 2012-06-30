@@ -2,13 +2,27 @@
 
 class Controller_Dashboard_Blog extends Controller_Template {
 
+	const ARTICLES_PER_PAGE = 10;
+
 	function action_list() {
 
-		$article = ORM::factory('Blog_Article');
+		$article = new Model_Blog_Article();
 
-		$articles = $article->get_articles();
+		$count = $article->get_count_of_articles();
+
+		$pagination = new Pagination(array(
+			'total_items' => $count,
+			'items_per_page' => self::ARTICLES_PER_PAGE,
+		));
+
+		$articles =
+			$article->get_articles(
+				$pagination->get_limit(),
+				$pagination->get_offset()
+			);
 
 		$this->view->articles = $articles;
+		$this->view->pagination = $pagination->render();
 
 	}
 
