@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	{% if articles %}
+
+		{% for article in articles %}
+
+			<article>
+
+				<h2><a href="{% url article article.id article.slug %}">{{ article.title }}</a></h2>
+
+				{{ article.content }}
+
+			</article>
+
+		{% endfor %}
+
+	{% else %}
+
+		<p>No articles.</p>
+
+	{% endif %}
+
+{% endblock %}
