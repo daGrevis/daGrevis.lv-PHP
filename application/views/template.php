@@ -61,7 +61,7 @@
 					<a href="http://linkedin.com/in/dagrevis" title="LinkedIn" target="_blank" class="linkedin">LinkedIn</a>
 				</li>
 
-			</div>
+			</ul>
 
 			<header>
 
@@ -72,7 +72,7 @@
 
 				</a>
 
-				<h2>«Intelligence is the ability to avoid doing work,<br /> yet getting the work done.» <span>/Linus Torvalds/</span></h2>
+				<h2>&laquo;If programming was sex, there would be a lot of<br /> unsatisfied computers.&raquo; <span>/Nikos Maravitsas/</span></h2>
 
 			</header>
 
