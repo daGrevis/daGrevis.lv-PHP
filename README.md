@@ -1,3 +1,5 @@
+This code is not the current version of my blog. Current version is written on Django framework and [can be found here](https://github.com/daGrevis/daGrevis.lv).
+
 # Code of [my blog](http://dagrevis.lv/ "daGrevis.lv") (based on [Kohana](http://kohanaframework.org/ "Kohana") 3.2)
 
 ## How to get it working?
